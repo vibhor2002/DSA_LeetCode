@@ -47,7 +47,7 @@ public:
             {
                 if (flag == 0)
                 {
-                    head = lis21;
+                    head = list2;
                     temp = head;
                 }
                 else
