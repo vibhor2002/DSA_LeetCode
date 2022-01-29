@@ -1,34 +1,29 @@
-// find next permutation
-void nextPermutation(vector<int> &nums)
+class Solution
 {
-    // initialize variable:
-    int breakPoint = -1;
-
-    // find a breakpoint:
-    for (int i = nums.size() - 1; i > 0; i--)
+public:
+    void nextPermutation(vector<int> &nums)
     {
-        if (nums[i] > nums[i - 1])
+        int n = nums.size();
+        if (n < 2)
+            return;
+
+        int i = n - 1, j = n - 1;
+
+        while (i > 0 && nums[i - 1] >= nums[i])
+            i--;
+
+        if (i == 0)
         {
-            breakPoint = i - 1;
-            break;
+            reverse(nums.begin(), nums.end());
+            return;
         }
-    }
 
-    // if no breakpoint
-    if (breakPoint < 0)
-    {
-        reverse(nums.begin(), nums.end());
-        return;
-    }
+        i--;
+        while (j > i && nums[j] <= nums[i])
+            j--;
 
-    // if found a breakpoint
-    for (int i = nums.size() - 1; i >= 0; i--)
-    {
-        if (nums[i] > nums[breakPoint])
-        {
-            swap(nums[breakPoint], nums[i]);
-            reverse(nums.begin() + breakPoint + 1, nums.end());
-            break;
-        }
+        swap(nums[i], nums[j]);
+
+        reverse(nums.begin() + i + 1, nums.end());
     }
-}
+};
