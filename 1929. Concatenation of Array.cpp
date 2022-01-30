@@ -1,32 +1,35 @@
 // 1st Method using extra space.
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> getConcatenation(vector<int>& nums)
+    vector<int> getConcatenation(vector<int> &nums)
     {
-        vector<int>ans;
+        vector<int> ans;
         int n = nums.size();
-        for(int i=0;i<n;i++)
+        for (int i = 0; i < n; i++)
         {
             ans.push_back(nums[i]);
         }
-        for(int i=0;i<n;i++)
+        for (int i = 0; i < n; i++)
         {
             ans.push_back(nums[i]);
         }
         return ans;
     }
 
-// 2nd method without extra Space.
+    // 2nd method without extra Space.
 
-class Solution {
-public:
-    vector<int> getConcatenation(vector<int>& nums) {
-        int n=nums.size();
-        for(int i=0;i<n;i++)
+    class Solution
+    {
+    public:
+        vector<int> getConcatenation(vector<int> &nums)
         {
-            nums.push_back(nums[i]);
+            int n = nums.size();
+            for (int i = 0; i < n; i++)
+            {
+                nums.push_back(nums[i]);
+            }
+            return nums;
         }
-        return nums;
-    }
-};
+    };
