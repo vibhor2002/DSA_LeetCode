@@ -1,11 +1,10 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int sum = 0;
-        int total = nums.size()*(nums.size() + 1)/2;
-        for (auto number : nums) {
-            sum += number;
-        }
-        return total - sum;
+        int n= nums.size();
+        int sum_n = (n*(n+1))/2;
+        int sum = accumulate(nums.begin(), nums.end(),0);
+        int missing= sum_n - sum;
+        return missing;
     }
 };
