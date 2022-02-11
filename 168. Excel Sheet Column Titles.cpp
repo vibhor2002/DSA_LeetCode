@@ -6,10 +6,11 @@ public:
         string ans;
         while (n)
         {
-            n -= 1;
+            n = n - 1;
             ans = (char)(n % 26 + 'A') + ans;
             n /= 26;
         }
+
         return ans;
     }
 };
