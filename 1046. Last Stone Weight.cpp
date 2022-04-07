@@ -1,12 +1,12 @@
 //  Using Priority Queue
-// Comparing last two elements as they are greator in weight 
+// Comparing last two elements as they are greator in weight
 
 class Solution
 {
 public:
     int lastStoneWeight(vector<int> &stones)
     {
-        priorty_queue<int> pq(stones.begin(), stones.end());
+        priority_queue<int> pq(stones.begin(), stones.end());
         while (pq.size() > 1)
         {
             int y = pq.top();
@@ -21,4 +21,5 @@ public:
             }
         }
         return pq.empty() ? 0 : pq.top();
-    };
+    }
+};
