@@ -1,17 +1,19 @@
 // Time Complexity O(n^2)
 
-class Solution {
+class Solution
+{
 public:
-    bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        for(int i=0;i<matrix.size();i++)
+    bool searchMatrix(vector<vector<int> > &matrix, int target)
+    {
+        for (int i = 0; i < matrix.size(); i++)
         {
-            for(int j=0;j<matrix[i].size();j++)
+            for (int j = 0; j < matrix[i].size(); j++)
             {
-                if(matrix[i][j]==target)
+                if (matrix[i][j] == target)
                     return true;
             }
         }
-        
+
         return false;
     }
 };
